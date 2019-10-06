@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  {% if user.is_authenticated %}
+    Xin chào {{ user.username }}!
+    <p><a href="{% url 'logout' %}">Đăng xuất</a></p>
+  {% else %}
+    <p>Bạn chưa đăng nhập</p>
+    <a href="{% url 'login' %}">Đăng nhập</a> |
+    <a href="{% url 'signup' %}">Đăng ký</a>
+  {% endif %}
+
+{% endblock %}
